@@ -1,0 +1,149 @@
+:root {
+  --rosa-pastel: #f7c6d9;
+  --rosa-escuro: #d46fa6;
+  --preto: #1a1a1a;
+  --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-principal);
+  background-color: var(--preto);
+  color: var(--rosa-pastel);
+  line-height: 1.6;
+  position: relative;
+}
+
+.bats {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bat {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: flyBats 10s linear infinite;
+  opacity: 0.07;
+  color: var(--rosa-pastel);
+}
+
+@keyframes flyBats {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+  }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(26, 26, 26, 0.9);
+  color: var(--rosa-pastel);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  font-family: var(--fonte-principal);
+  font-weight: bold;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+nav.scrolled {
+  background-color: rgba(255, 192, 218, 0.15);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 5px #00000080;
+}
+
+nav a {
+  color: var(--rosa-pastel);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd6eb;
+}
+
+header {
+  text-align: center;
+  padding: 7rem 2rem 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.avatar {
+  width: 130px;
+  border-radius: 50%;
+  border: 3px solid var(--rosa-pastel);
+  margin-bottom: 1rem;
+}
+
+main {
+  padding: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+section {
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 1rem;
+  border-left: 3px solid var(--rosa-escuro);
+  border-radius: 0.5rem;
+}
+
+h1, h2 {
+  color: var(--rosa-escuro);
+  transition: color 0.3s ease;
+}
+
+h2:hover {
+  color: #ffd6eb;
+}
+
+a {
+  color: var(--rosa-pastel);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background-color: #111;
+  z-index: 1;
+  position: relative;
+}
+
+.accordion-title {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.accordion-title:hover {
+  color: #ffd6eb;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.accordion-content.open {
+  max-height: 500px;
+}
